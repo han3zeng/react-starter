@@ -20,33 +20,35 @@
 
 ## Things I should Include
 * package
-    * react
-    * react router
-    * webpack
-    * typescript
-    * styled-component
+    * [ ] react
+    * [ ] react router
+    * [ ] webpack
+    * [ ] typescript
+    * [ ] styled-component
 
 * server
-    * express
+    * [ ] express
 
 * code style
-    * eslint
-    * prettier
+    * [ ] eslint
+    * [ ] prettier
 
 * api || state management
-    * graphql + apollo
+    * [ ] graphql + apollo
 
 * testing
-    * Jest + react testing library
+    * [x] Jest + react testing library
+    * [ ] cypress
+    * [ ] storbook
 
 
 
 ## Implementation
-1. Server-Side-Rendering
-2. hot module reload
-3. PWA
-4. AMP
-5. code splitting + tree shaking
+1. [ ] Server-Side-Rendering
+2. [ ] hot module reload
+3. [ ] PWA
+4. [ ] AMP
+5. [ ] code splitting + tree shaking
 
 
 ## References
