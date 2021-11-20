@@ -1,7 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -15,7 +14,6 @@ module.exports = {
     port: 3001,
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
@@ -26,6 +24,7 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    clean: true,
   },
   module: {
     rules: [
@@ -34,9 +33,16 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+    alias: {
+      assets: path.resolve(__dirname, './src/assets'),
+    },
   },
 };

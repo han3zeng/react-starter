@@ -10,5 +10,14 @@
   "parserOptions": {
     "ecmaVersion": 2020
   },
-  "plugins": ["jest"]
+  "plugins": ["jest"],
+  "settings": {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['assets', './src/assets']
+        ]
+      }
+    }
+  }
 }
