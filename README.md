@@ -49,6 +49,8 @@
 3. [ ] PWA
 4. [ ] AMP
 5. [ ] code splitting + tree shaking
+6. [X] use [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)+ exress to replace webpack-dev-server
+    * for consistent future SSR in both dev and prod mode
 
 
 ## References

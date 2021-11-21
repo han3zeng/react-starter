@@ -7,18 +7,15 @@ module.exports = {
   entry: {
     app: [
       './src/index.jsx',
+      'webpack-hot-middleware/client',
     ],
   },
   devtool: 'inline-source-map',
-  devServer: {
-    port: 3001,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
   ],
   output: {
     filename: '[name].bundle.js',

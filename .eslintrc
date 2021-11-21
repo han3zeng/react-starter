@@ -5,7 +5,8 @@
     "jest/globals": true
   },
   "rules": {
-    "react/jsx-curly-newline": "error"
+    "react/jsx-curly-newline": "error",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   },
   "parserOptions": {
     "ecmaVersion": 2020
