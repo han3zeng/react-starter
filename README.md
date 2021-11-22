@@ -39,8 +39,8 @@
 * testing
     * [x] Jest + react testing library
     * [ ] cypress
-    * [ ] storbook
-
+* style
+    * [ ] storybook
 
 
 ## Implementation
