@@ -4,7 +4,7 @@
   "description": "this will be my project prototype",
   "main": "index.js",
   "scripts": {
-    "dev": "BABEL_ENV=development PORT=3001 node ./server.js",
+    "dev": "node ./server.js",
     "build:test": "webpack --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
     "publish:customized": "cp ./package.json ./README.md ./dist && cd ./dist && npm publish",

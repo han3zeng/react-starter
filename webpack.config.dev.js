@@ -16,6 +16,10 @@ module.exports = {
       template: './public/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development',
+      PORT: 3001,
+    }),
   ],
   output: {
     filename: '[name].bundle.js',

@@ -14,8 +14,6 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-console.log('webpackHotMiddleware(compiler): ', webpackHotMiddleware(compiler))
-
 app.use(webpackHotMiddleware(compiler));
 
 app.listen(port, () => {

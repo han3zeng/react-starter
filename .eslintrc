@@ -4,6 +4,9 @@
     "browser": true,
     "jest/globals": true
   },
+ "globals": {
+      "process": "readonly"
+  },
   "rules": {
     "react/jsx-curly-newline": "error",
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
