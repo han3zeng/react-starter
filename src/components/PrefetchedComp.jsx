@@ -1,0 +1,22 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin-top: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+`;
+
+function PrefetchedComp() {
+  return (
+    <Container>
+      <div>this is prefetched comp</div>
+    </Container>
+  );
+}
+
+export default PrefetchedComp;
