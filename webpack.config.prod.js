@@ -10,7 +10,7 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   output: {
-    filename: '[name].js',
+    filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs2',
   },
