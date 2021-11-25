@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+/* check it out later */
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -22,7 +24,7 @@ module.exports = {
     }),
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     clean: true,
@@ -44,6 +46,18 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
     alias: {
       assets: path.resolve(__dirname, './src/assets'),
+    },
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
     },
   },
 };

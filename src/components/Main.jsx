@@ -24,7 +24,7 @@ function Main() {
   return (
     <Container>
       <Image src={profileSrc} alt="profile" />
-      <span>this is main page</span>
+      <span>this is main page!what!!</span>
       <Suspense
         fallback={null}
       >

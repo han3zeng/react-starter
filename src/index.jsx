@@ -13,7 +13,6 @@ const renderPage = () => {
 
 renderPage();
 
-console.log('process.env.NODE_ENV: ', process.env.NODE_ENV)
 if (module.hot || process.env.NODE_ENV !== 'production') {
   module.hot.accept('./App.jsx', renderPage);
 }
