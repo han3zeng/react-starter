@@ -1,5 +1,6 @@
 {
   "name": "react-starter",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "this will be my project prototype",
   "main": "index.js",

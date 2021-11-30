@@ -1,18 +1,29 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+/* check it out later */
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'production',
   entry: {
-    index: './src/index.jsx',
+    app: ['./src/index.jsx'],
   },
+  devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production',
+      PORT: 3001,
+    }),
   ],
   output: {
     filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs2',
+    publicPath: '/',
+    clean: true,
   },
   module: {
     rules: [
@@ -20,28 +31,21 @@ module.exports = {
         test: /\.js$|\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: {
-          presets: [
-            [
-              '@babel/preset-react',
-              {
-                development: process.env.BABEL_ENV === 'development',
-              },
-            ],
-          ],
-        },
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
-  },
-  externals: {
-    react: 'react',
-    'react-dom': 'react-dom',
-    'styled-components': 'styled-components',
+    alias: {
+      assets: path.resolve(__dirname, './src/assets'),
+    },
   },
   optimization: {
+    innerGraph: true,
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {

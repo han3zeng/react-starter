@@ -46,8 +46,13 @@
     * extract common setting from both prod and dev to base config
         * [webpack-merge](https://github.com/survivejs/webpack-merge)
 
+* [web vitals](https://github.com/GoogleChrome/web-vitals)
+
+* [add normalzie styled componnt](https://github.com/styled-components/styled-components/issues/1152)
+
 ## Implementation
 1. [ ] Server-Side-Rendering
+    * [loadable component](https://loadable-components.com/docs/getting-started/)
 2. [ ] hot module reload
     * when error occurs
 3. [ ] PWA
