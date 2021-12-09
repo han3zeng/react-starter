@@ -47,6 +47,8 @@
         * [webpack-merge](https://github.com/survivejs/webpack-merge)
 
 * [web vitals](https://github.com/GoogleChrome/web-vitals)
+    * https://web.dev/vitals/
+    * https://web.dev/vitals-tools/
 
 * [add normalzie styled componnt](https://github.com/styled-components/styled-components/issues/1152)
 

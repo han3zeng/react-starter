@@ -1,27 +1,22 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-/* check it out later */
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: 'production',
   entry: {
     app: ['./src/index.jsx'],
   },
-  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production',
-      PORT: 3001,
+      TEST: 'test',
     }),
   ],
   output: {
     filename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(process.cwd(), 'dist'),
     publicPath: '/',
     clean: true,
   },
@@ -41,12 +36,11 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      assets: path.resolve(__dirname, './src/assets'),
+      assets: path.resolve(process.cwd(), './src/assets'),
     },
   },
   optimization: {
-    innerGraph: true,
-    moduleIds: 'deterministic',
+    usedExports: true,
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
