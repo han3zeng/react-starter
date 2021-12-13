@@ -17,40 +17,45 @@
         2. `npm run build`
         3. `npm run publish:customized`
 
+## Elements
+* react eco
+    * react
+    * react router
+
+* webpack
+    * tree shaking
+    * code split
+
+* style
+    * styled-components
+    * normalize.css
+
+* server
+    * express
+
+* code standard
+    * eslint
+    * prettier (atom)
+
+* testing
+    * Jest + react testing library
 
 ## Things I should Include
 * package
-    * [ ] react
-    * [ ] react router
-    * [ ] webpack
     * [ ] typescript
-    * [ ] styled-component
-
-* server
-    * [ ] express
-
-* code style
-    * [ ] eslint
-    * [ ] prettier
 
 * api || state management
     * [ ] graphql + apollo
 
 * testing
-    * [x] Jest + react testing library
     * [ ] cypress
-* style
-    * [ ] storybook
 
-* config (prod and dev)
-    * extract common setting from both prod and dev to base config
-        * [webpack-merge](https://github.com/survivejs/webpack-merge)
+* comp development
+    * [ ] storybook
 
 * [web vitals](https://github.com/GoogleChrome/web-vitals)
     * https://web.dev/vitals/
     * https://web.dev/vitals-tools/
-
-* [add normalzie styled componnt](https://github.com/styled-components/styled-components/issues/1152)
 
 ## Implementation
 1. [ ] Server-Side-Rendering
