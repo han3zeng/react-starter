@@ -3,6 +3,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './components/Home';
 import Main from './components/Main';
+import normalize from './utils/normalize';
 
 const theme = {
   formGray: '#ccc',
@@ -12,6 +13,7 @@ const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize};
   body {
     background: white;
     padding: 10px;
@@ -28,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input {
-    width: 100%;
     box-sizing: border-box;
     border: 1px solid ${(props) => props.theme.formGray};
     padding: 6px 3px;
