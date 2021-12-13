@@ -3,13 +3,15 @@ const webpack = require('webpack');
 const path = require('path');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const history = require('connect-history-api-fallback');
 const config = require('./webpack/webpack.dev');
 
 const port = 3001;
 const app = express();
 
-if (process.ENV === 'development') {
+if (process.env.ENV === 'development') {
   const compiler = webpack(config);
+  app.use(history());
   app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
   }));
