@@ -6,5 +6,5 @@ import Main from './Main';
 
 test('Main Render Testing', () => {
   render(<Main />);
-  expect(screen.getByText('this is main page')).toBeInTheDocument();
+  expect(screen.getByText('this is main page!what!!')).toBeInTheDocument();
 });
