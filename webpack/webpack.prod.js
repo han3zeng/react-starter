@@ -6,6 +6,7 @@ const common = require('./webpack.common');
 
 const prod = {
   mode: 'production',
+  devtool: 'source-map',
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
